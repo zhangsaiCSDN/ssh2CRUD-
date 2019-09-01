@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Generated 2019-8-30 15:11:07 by Hibernate Tools 5.4.2.Final --><!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping auto-import="true" default-access="property" default-cascade="none" default-lazy="true">
+    <class catalog="test" dynamic-insert="false" dynamic-update="false" mutable="true" name="com.woniuxy.domain.Emp" optimistic-lock="version" polymorphism="implicit" select-before-update="false" table="emp">
+        <id name="eid" type="java.lang.Integer">
+            <column name="eid"/>
+            <generator class="identity"/>
+        </id>
+        <many-to-one class="com.woniuxy.domain.Dept" embed-xml="true" fetch="select" insert="true" name="dept" not-found="exception" optimistic-lock="true" unique="false" update="true">
+            <column name="did"/>
+        </many-to-one>
+        <property generated="never" lazy="false" name="ename" optimistic-lock="true" type="string" unique="false">
+            <column length="20" name="ename"/>
+        </property>
+        <property generated="never" lazy="false" name="sal" optimistic-lock="true" type="java.lang.Double" unique="false">
+            <column name="sal" precision="22" scale="0"/>
+        </property>
+        <property generated="never" lazy="false" name="hiredate" optimistic-lock="true" type="date" unique="false">
+            <column length="10" name="hiredate"/>
+        </property>
+    </class>
+</hibernate-mapping>
